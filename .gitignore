@@ -1,3 +1,4 @@
 local_init.py
 venv/
 __pycache__/
+static/stories
