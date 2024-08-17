@@ -3,7 +3,6 @@ from langchain_openai.chat_models import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 from langchain.output_parsers import PydanticOutputParser
 
-import local_init
 import topics
 # %%
 prompt_template = """
@@ -26,8 +25,7 @@ parser = PydanticOutputParser(pydantic_object=topics.ThemeList)
 print(parser.get_format_instructions())
 
 # %%
-gpt4o = ChatOpenAI(temperature=0.0, model="gpt-4o",
-                   openai_api_key=local_init.openai_key)
+gpt4o = ChatOpenAI(temperature=0.0, model="gpt-4o")
 
 chain = prompt | gpt4o | parser
 
