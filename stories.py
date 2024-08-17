@@ -20,8 +20,9 @@ class TimedStory(Story):
     english: List[TimedLine]
 
 class DailyStory(BaseModel):
+    language: str = Field(description="The language of the story")
     story: TimedStory = Field(description="The story for the day")
     abstract: str = Field(description="The abstract of the story")
-    date: str = Field(description="The date of the story")
+    date: str = Field(description="The date of the story", default='')
     theme: str = Field(description="The theme of the story")
     topic: str = Field(description="The topic of the story")
